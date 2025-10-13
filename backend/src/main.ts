@@ -9,7 +9,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:3000', // Next.js dev server
+    origin: [
+      'http://localhost:3000', // Next.js dev server
+      'https://front-worktest-for-phachara-mai.onrender.com', // Production URL
+    ], // Next.js dev server
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
