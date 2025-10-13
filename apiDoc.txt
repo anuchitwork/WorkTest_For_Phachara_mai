@@ -1,3 +1,9 @@
+
+frontendURl : https://front-worktest-for-phachara-mai.onrender.com
+backendURL :  https://back-worktest-for-phachara-mai.onrender.com/docs
+hostService database : alwaysData
+
+
 rq = http://localhost:5000/users/many/11?type=back&take=5
 
 {

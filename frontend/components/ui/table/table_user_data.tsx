@@ -83,6 +83,7 @@ export default function Table_user_data() {
     body: JSON.stringify(editFormData),
   });
     const updatedUsers = await fetch_api_many_id(arrayOfpage,"next");
+    console.log("arrayOfpage :", arrayOfpage);
     setUsers(updatedUsers.users);
     setEditingUserId(null);
   };
