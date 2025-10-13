@@ -80,7 +80,7 @@ export async function fetch_api_many_id(ids: number[],type:string,takePid:number
 
 
 
-  const apiBase = process.env.NEXT_PUBLIC_API_URL;
+  const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://back-worktest-for-phachara-mai.onrender.com";
   // แปลง array [4,5] -> "4%2C5"
   const idString = encodeURIComponent(ids.join(','));
   
