@@ -1,6 +1,6 @@
 "use client";
 
-import { useState,useContext , useEffect } from "react";
+import { useState,useContext , useEffect, useMemo } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { UserContext} from "../../../context/UserContext";
 import {fetch_api_many_id} from "../../function/api_user";
@@ -14,9 +14,15 @@ export default function ButtonForTable() {
 
   const [visibleCount, setVisibleCount] = useState(5);
   const [page, setPage] = useState(0);
-  const [totalPages, setTotalPages] = useState( Math.ceil(totalRows / visibleCount) );
- 
+  // totalPages derived from totalRows and visibleCount
+  const totalPages = Math.max(1, Math.ceil(totalRows / visibleCount));
 
+  // ถ้า page เกินเมื่อ totalPages ลดให้ cap ลง
+  useEffect(() => {
+    if (page >= totalPages) {
+      setPage(Math.max(0, totalPages - 1));
+    }
+  }, [totalPages, page]);
 
 
 
@@ -73,16 +79,14 @@ export default function ButtonForTable() {
       const arr = !isNaN(value) && value > 0 ? Array.from({ length: value }, (_, i) => i + 1) : [];
       
       setVisibleCount(value);
-      
       setPage(0);
       setArrayOfpage([0]);
       try {
-
         const users = await fetch_api_many_id([0],"next",value); // รอผลลัพธ์ API
         setTakePid(value);
-        setUsers(users.users); // อัพเดต context
-        setTotalRows(users.totalCount); // อัพเดต totalRows ใน context
-        console.log("handleChangeCount users on handleChangeCount:", users);
+         setUsers(users.users); // อัพเดต context
+         setTotalRows(users.totalCount); // อัพเดต totalRows ใน context
+         console.log("handleChangeCount users on handleChangeCount:", users);
       } catch (error) {
         console.error("Failed to fetch users on handleChangeCount:", error);
       }

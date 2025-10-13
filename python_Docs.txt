@@ -1,0 +1,3 @@
+start venv : venv\Scripts\activate
+libry : pip install requests faker python-dateutil
+run python : python apiAuto.py --times 10 --delay 2 --log out.csv
