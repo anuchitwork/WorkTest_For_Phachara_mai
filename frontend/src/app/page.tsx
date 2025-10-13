@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <div>
         <FormDataUserInput/>
-        <Table_user_data/>
+        {/* <Table_user_data/> */}
       </div>
   );
 }
