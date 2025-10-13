@@ -1,0 +1,57 @@
+rq = http://localhost:5000/users/many/11?type=back&take=5
+
+{
+  "users": [
+    {
+      "id": 7,
+      "firstname": "7",
+      "lastname": "string",
+      "birthday": "1899-11-30",
+      "email": "ฟasdASDASDfก@asdasdsa",
+      "phone": "string",
+      "uuid": "",
+      "pid": 6
+    },
+    {
+      "id": 8,
+      "firstname": "8",
+      "lastname": "string",
+      "birthday": "1899-11-11",
+      "email": "adsfhjklDfก@asdasdsa",
+      "phone": "stringddddddddd",
+      "uuid": "",
+      "pid": 7
+    },
+    {
+      "id": 10,
+      "firstname": "10",
+      "lastname": "string",
+      "birthday": "1899-11-30",
+      "email": "aflu[;p[['['[[9ก@asdasdsa",
+      "phone": "string5555",
+      "uuid": "",
+      "pid": 8
+    },
+    {
+      "id": 11,
+      "firstname": "11",
+      "lastname": "string",
+      "birthday": "1899-11-30",
+      "email": "arhjjjj'['[[9ก@asdasdsa",
+      "phone": "string",
+      "uuid": "",
+      "pid": 9
+    },
+    {
+      "id": 12,
+      "firstname": "12",
+      "lastname": "string",
+      "birthday": "1899-11-30",
+      "email": "awrhjaajerjaje'[[9ก@asdasdsa",
+      "phone": "string",
+      "uuid": "",
+      "pid": 10
+    }
+  ],
+  "totalCount": 19
+}
