@@ -6,6 +6,7 @@ import Button_for_table from "./button_for_table";
 import { UserContext } from "../../../context/UserContext";
 import { useContext } from "react";
 import { fetch_api_many_id } from "../../function/api_user";
+import { ApiError } from "next/dist/server/api-utils";
 
 
 type User = {
@@ -45,7 +46,8 @@ export default function Table_user_data() {
   };
 
   const handleSave = async(id: number) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`, {
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://back-worktest-for-phachara-mai.onrender.com";
+    const res = await fetch(`${apiBase}/users/${id}`, {
     method: "PATCH",
     headers: {
       "accept": "*/*",
@@ -71,7 +73,8 @@ export default function Table_user_data() {
   };
 
   const handleDelete = async(id: number) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`, {
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "https://back-worktest-for-phachara-mai.onrender.com";
+    const res = await fetch(`${apiBase}/users/${id}`, {
     method: "DELETE",
     headers: {
       "accept": "*/*",

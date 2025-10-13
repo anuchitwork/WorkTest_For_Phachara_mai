@@ -19,7 +19,7 @@ interface FormData {
   email: FormField;
   phone: FormField;
 }
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://back-worktest-for-phachara-mai.onrender.com";
 
 export default function FormDataUserInput() {
   const [formData, setFormData] = useState<FormData>({
