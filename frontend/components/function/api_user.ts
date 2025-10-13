@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 
-const apiBase = process.env.NEXT_PUBLIC_API_BASE;
+// const apiBase = process.env.NEXT_PUBLIC_API_URL;
 
 interface CallApiOptions {
   url: string;
@@ -18,7 +18,7 @@ export function useUserApi<T = any>() {
 
 
 
-  const apiBase = process.env.NEXT_PUBLIC_API_BASE;
+  // const apiBase = process.env.NEXT_PUBLIC_API_URL;
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<T | any | null>(null); // รองรับทุกชนิด
   const [error, setError] = useState<Error | null>(null);
