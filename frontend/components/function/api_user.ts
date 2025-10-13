@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 
-const apiBase = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const apiBase = process.env.NEXT_PUBLIC_API_BASE;
 
 interface CallApiOptions {
   url: string;
@@ -80,7 +80,7 @@ export async function fetch_api_many_id(ids: number[],type:string,takePid:number
 
 
 
-  const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  const apiBase = process.env.NEXT_PUBLIC_API_URL;
   // แปลง array [4,5] -> "4%2C5"
   const idString = encodeURIComponent(ids.join(','));
   

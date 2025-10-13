@@ -93,9 +93,7 @@ export default function ButtonForTable() {
     setTakePid(3);
   }, []);
 
-    useEffect(() => {
-    setTotalPages(Math.ceil(totalRows / visibleCount));
-  }, [totalRows , visibleCount]);
+
 
   return (
     <div className="p-2 border border-gray-300 rounded-lg shadow-md w-full  mx-auto flex items-center">
